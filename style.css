@@ -4,7 +4,7 @@
   --background-color: #efefef;
   --title-background-color: #dedede;
   --hero-background-color: #ffffff;
-  --project-info-background-color: #f2f2f2;
+  --project-info-background-color: #a99aff;
   --widget-border-color: #000000;
   --widget-box-shadow: .1rem.1rem 1rem rgba(0, 0, 0, 0.1);
 
@@ -18,8 +18,8 @@
   /* Other values*/
   --height-1: 50px;
   --height-2: 100px;
-  --height-3: 200px;
-  --height-4: 300px;
+  --height-3: 150px;
+  --height-4: 200px;
 }
 
 /* General Styles */
@@ -35,6 +35,7 @@ body {
   padding: 0 .5rem;
   color: var(--text-color);
   background: var(--background-color);
+  font-family: "Raleway", sans-serif;
 }
 
 a {
@@ -72,7 +73,47 @@ img {
   justify-content: center;
   background: var(--hero-background-color);
   height: var(--height-4);
+  position: relative;
+  overflow: hidden;
 }
+
+#hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(transparent, white 55%, white 55%, transparent),
+    linear-gradient(to right, transparent, white 55%, white 55%, transparent),
+    linear-gradient(var(--widget-border-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--widget-border-color) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 20px 20px, 20px 20px;
+  opacity: 0.2;
+}
+
+#hero-top {
+  font-size: 3rem;
+  font-weight: 400;
+  position: relative;
+  z-index: 1;
+}
+
+#hero-bottom {
+  font-size: 2rem;
+  font-weight: 400;
+  position: relative;
+  z-index: 1;
+}
+
+#hero-name {
+  text-decoration: underline; 
+  text-decoration-color: orangered;
+  text-decoration-style: wavy;
+  font-weight: 700;
+}
+
 
 #socials {
   display: flex;
@@ -89,6 +130,8 @@ img {
   width: 100%;
   height: var(--height-1);
   color: white;
+  font-size: 1.5rem;
+  font-weight: 600;
 }
 
 #social-github {
@@ -110,9 +153,33 @@ img {
   position: relative;
 }
 
+/* Adding fade effect on sides */
+#tools::before,
+#tools::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 10%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Left fade */
+#tools::before {
+  left: 0;
+  background: linear-gradient(to right, var(--background-color), rgba(239, 239, 239, 0));
+}
+
+/* Right fade */
+#tools::after {
+  right: 0;
+  background: linear-gradient(to left, var(--background-color), rgba(239, 239, 239, 0));
+}
+
 .tools-container {
   display: flex;
-  animation: scroll 80s linear infinite;
+  animation: scroll 30s linear infinite;
 }
 
 .tool {
@@ -123,6 +190,8 @@ img {
   align-items: center;
   text-align: center;
   background: var(--hero-background-color);
+  font-size: 1.5rem;
+  font-weight: 600;
 }
 
 @keyframes scroll {
@@ -130,8 +199,19 @@ img {
     transform: translateX(0%);
   }
   100% {
-    transform: translateX(-500%);
+    transform: translateX(-100%);
   }
+}
+
+/* About */
+#about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 1rem;
+  height: var(--height-4);
 }
 
 /* Projects */
@@ -148,7 +228,7 @@ img {
 }
 
 .project-img {
-  height: 65%;
+  height: 55%;
 }
 
 .project-img img {
@@ -156,21 +236,70 @@ img {
 }
 
 .project-info {
-  height: 35%;
+  height: 45%;
   background: var(--project-info-background-color);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
   border-top: 2px solid var(--widget-border-color);
+  padding: 0 1rem;
 }
 
+.project-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.project-info {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+/* Large devices */
 @media (min-width: 600px) {
+  :root {
+    /* Other values*/
+  --height-1: 50px;
+  --height-2: 100px;
+  --height-3: 200px;
+  --height-4: 300px;
+  }
+
+  #hero {
+    font-size: 5rem;
+  }
+
   #projects {
     grid-template-columns: 1fr 1fr;
   }
 
   .project {
     height: var(--height-3);
+  }
+}
+/* XSmall devices */
+@media (max-width: 350px) {
+  :root {
+    /* Other values*/
+  --height-1: 50px;
+  --height-2: 100px;
+  --height-3: 150px;
+  --height-4: 150px;
+  }
+
+  #hero h1 {
+    font-size: 2rem;
+  }
+  #hero h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Non-touch devices */
+@media (hover: hover) {
+  a:hover {
+    transform: scale(.98);
   }
 }

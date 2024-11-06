@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="images/vasco.jpg" type="image/x-icon">
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <title>Gui Frantz</title>
 </head>
 <body>
@@ -13,68 +16,74 @@
 
      <!-- Socials -->
       <div id="socials">
-        <a class="social widget" id="social-github" href="#"><ion-icon name="logo-github"></ion-icon></a>
-        <a class="social widget" id="social-linkedin" href="#"><ion-icon name="logo-linkedin"></ion-icon></a>
-        <a class="social widget" id="social-instagram" href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+        <a class="social widget" id="social-github" href="https://github.com/GuiFrantz"><ion-icon name="logo-github"></ion-icon></a>
+        <a class="social widget" id="social-linkedin" href="https://linkedin.com/in/guilhermegfrantz"><ion-icon name="logo-linkedin"></ion-icon></a>
+        <a class="social widget" id="social-instagram" href="https://www.instagram.com/guigurgelf/"><ion-icon name="logo-instagram"></ion-icon></a>
       </div>
 
       <!-- Hero -->
      <div id="hero" class="widget">
-        <h1>Olá! I'm Gui,</h1>
-        <h2>Full Stack Developer</h2>
+        <h1 id="hero-top">Olá! I'm <span id="hero-name">Gui</span></h1>
+        <h1 id="hero-bottom">Full Stack Developer</h1>
      </div>
 
      <!-- Tools Slider -->
-    <div id="tools" class="slider">
+    <div id="tools">
         <div class="tools-container">
         <div class="tool widget"><ion-icon name="logo-react"></ion-icon></div>
-        <div class="tool widget">Django</div>
-        <div class="tool widget">Flask</div>
         <div class="tool widget"><ion-icon name="logo-html5"></ion-icon></div>
         <div class="tool widget"><ion-icon name="logo-css3"></ion-icon></div>
-        <div class="tool widget">MySQL</div>
         <div class="tool widget"><ion-icon name="logo-javascript"></ion-icon></div>
-        <div class="tool widget">Java</div>
         <div class="tool widget"><ion-icon name="logo-python"></ion-icon></div>
+        <div class="tool widget">Django</div>
+        <div class="tool widget">Flask</div>
+        <div class="tool widget">MySQL</div>
+        <div class="tool widget">Java</div>
         <div class="tool widget">C</div>
         <div class="tool widget">Kotlin</div>
         <!-- repeated -->
         <div class="tool widget"><ion-icon name="logo-react"></ion-icon></div>
-        <div class="tool widget">Django</div>
-        <div class="tool widget">Flask</div>
         <div class="tool widget"><ion-icon name="logo-html5"></ion-icon></div>
         <div class="tool widget"><ion-icon name="logo-css3"></ion-icon></div>
-        <div class="tool widget">MySQL</div>
         <div class="tool widget"><ion-icon name="logo-javascript"></ion-icon></div>
-        <div class="tool widget">Java</div>
         <div class="tool widget"><ion-icon name="logo-python"></ion-icon></div>
+        <div class="tool widget">Django</div>
+        <div class="tool widget">Flask</div>
+        <div class="tool widget">MySQL</div>
+        <div class="tool widget">Java</div>
         <div class="tool widget">C</div>
         <div class="tool widget">Kotlin</div>
     </div>
   </div>
   
+    <!-- About -->
+     <div id="about" class="widget">
+        Descrição about me meio curta mas n muito aqui,
+        Queria colocar aqui um daqueles desenhos de lisboa meio minimalista com o eletrico e tal
+        pra animar um pouco mais o site. Duas linhas max, fixa no topo meio e em baixo e lado o desenho
+     </div>
 
       <!-- Projects -->
        <div id="projects">
-            <a class="project widget" href="#">
-                <div class="project-img"><img src="images/vasco.jpg" alt="vasco"></div>
+            <a class="project widget" href="https://guifrantz.github.io/webnote/">
+                <div class="project-img"><img src="images/vasco.jpg" alt="WebNote"></div>
                 <div class="project-info">
-                    <p class="project-title">Project 1</p>
-                    <p class="project-description">Lorem ipsum dolor</p>
+                    <p class="project-title">WebNote</p>
+                    <p class="project-description">Minimal text editor</p>
                 </div>
             </a>
-            <a class="project widget" href="#">
-                <div class="project-img"><img src="images/vasco.jpg" alt="vasco"></div>
+            <a class="project widget" href="#"> <!-- When finished (also find new domain): https://a22204098.pythonanywhere.com/articlesApp/index/-->
+                <div class="project-img"><img src="images/vasco.jpg" alt="Guftz"></div>
                 <div class="project-info">
-                    <p class="project-title">Project 1</p>
-                    <p class="project-description">Lorem ipsum dolor</p>
+                    <p class="project-title">Guftz</p>
+                    <p class="project-description">Prototype social media</p>
                 </div>
             </a>
-            <a class="project widget" href="#">
-                <div class="project-img"><img src="images/vasco.jpg" alt="vasco"></div>
+            <a class="project widget" href="#"> <!-- Only link when new domain available, finished and account locked -->
+                <div class="project-img"><img src="images/vasco.jpg" alt="Seven Analytics"></div>
                 <div class="project-info">
-                    <p class="project-title">Project 1</p>
-                    <p class="project-description">Lorem ipsum dolor</p>
+                    <p class="project-title">Seven Analytics</p>
+                    <p class="project-description">Proprietary data analysis software for @Seven</p>
                 </div>
             </a>
        </div>
