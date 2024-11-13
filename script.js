@@ -1,0 +1,29 @@
+// Clone tools for loop
+const toolsContainer = document.querySelector('#tools-container');
+const tools = Array.from(toolsContainer.children);
+tools.forEach(tool => {
+  const clone = tool.cloneNode(true);
+  toolsContainer.appendChild(clone);
+});
+
+//Footer update year
+const currentYear = new Date().getFullYear();
+document.getElementById("year_footer").textContent = currentYear;
+
+// Highlight projects on scroll
+if (window.matchMedia("(hover: none)").matches) { // Only for touch devices
+  document.addEventListener('scroll', () => {
+    const projects = document.querySelectorAll('.project');
+    projects.forEach(project => {
+      const rect = project.getBoundingClientRect();
+      const projectIsCentered = rect.top < window.innerHeight / 2 && rect.bottom > window.innerHeight / 2;
+
+      const dots = project.querySelector('.dots');
+      if (projectIsCentered) {
+        dots.classList.add('highlighted');
+      } else {
+        dots.classList.remove('highlighted');
+      }
+    });
+  });
+}
