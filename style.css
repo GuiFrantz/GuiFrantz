@@ -1,13 +1,21 @@
 /* Color Palette */
 :root {
+  /* Light mode colors */
   --text-color: #000000;
   --background-color: #efefef;
   --title-background-color: #dedede;
   --hero-background-color: #ffffff;
+  --hero-blur: white;
+  --about-text-color: #ffffff;
   --project-info-background-color: #a99aff;
   --widget-border-color: #000000;
   --widget-box-shadow: .1rem.1rem 1rem rgba(0, 0, 0, 0.1);
+  --mac-header-background-color: #f3f3f3;
+  --dot-background-color: #dbdbdb;
 
+}
+
+:root {
   /* Extra colors */
   --linkedin-color: #0077b5;
   --insta-color: #dd2a78;
@@ -17,9 +25,9 @@
 
   /* Other values*/
   --height-1: 50px;
-  --height-2: 100px;
-  --height-3: 150px;
-  --height-4: 200px;
+  --height-2: 150px;
+  --height-3: 250px;
+  --height-4: 300px;
 }
 
 /* General Styles */
@@ -29,13 +37,14 @@
 }
 
 body {
-  margin: 0 auto;
+  margin: .5rem auto;
   max-width: 600px;
   height: 100vh;
   padding: 0 .5rem;
   color: var(--text-color);
   background: var(--background-color);
   font-family: "Raleway", sans-serif;
+  font-weight: 500;
 }
 
 a {
@@ -49,72 +58,13 @@ img {
 }
 
 .widget {
-  border-radius: 2rem;
+  border-radius: 18px;
   border: 2px solid var(--widget-border-color);
-  margin: .5rem;
+  margin: 1rem;
   overflow: hidden;
   box-shadow: var(--widget-box-shadow);
 }
-
-.title {
-  height: var(--height-1);
-  background: var(--title-background-color);
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  justify-content: center;
-}
-
-/* Hero */
-#hero {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  justify-content: center;
-  background: var(--hero-background-color);
-  height: var(--height-4);
-  position: relative;
-  overflow: hidden;
-}
-
-#hero::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: 
-    linear-gradient(transparent, white 55%, white 55%, transparent),
-    linear-gradient(to right, transparent, white 55%, white 55%, transparent),
-    linear-gradient(var(--widget-border-color) 1px, transparent 1px),
-    linear-gradient(90deg, var(--widget-border-color) 1px, transparent 1px);
-  background-size: 100% 100%, 100% 100%, 20px 20px, 20px 20px;
-  opacity: 0.2;
-}
-
-#hero-top {
-  font-size: 3rem;
-  font-weight: 400;
-  position: relative;
-  z-index: 1;
-}
-
-#hero-bottom {
-  font-size: 2rem;
-  font-weight: 400;
-  position: relative;
-  z-index: 1;
-}
-
-#hero-name {
-  text-decoration: underline; 
-  text-decoration-color: orangered;
-  text-decoration-style: wavy;
-  font-weight: 700;
-}
-
-
+/* Socials */
 #socials {
   display: flex;
   flex-direction: row;
@@ -124,6 +74,7 @@ img {
 }
 
 .social {
+  margin-top: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -132,6 +83,13 @@ img {
   color: white;
   font-size: 1.5rem;
   font-weight: 600;
+}
+
+.social:first-child {
+  margin-right: 0;
+}
+.social:last-child {
+  margin-left: 0;
 }
 
 #social-github {
@@ -146,79 +104,111 @@ img {
   background: var(--insta-color);
 }
 
-/* Tools Slider */
-#tools {
-  overflow: hidden;
-  width: 100%;
+/* Hero */
+#hero {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  background: var(--hero-background-color);
+  height: var(--height-4);
   position: relative;
+  overflow: hidden;
+  margin-top: 0;
 }
 
-/* Adding fade effect on sides */
-#tools::before,
-#tools::after {
+#hero::before {
   content: "";
   position: absolute;
   top: 0;
-  bottom: 0;
-  width: 10%;
-  z-index: 1;
-  pointer-events: none;
-}
-
-/* Left fade */
-#tools::before {
   left: 0;
-  background: linear-gradient(to right, var(--background-color), rgba(239, 239, 239, 0));
-}
-
-/* Right fade */
-#tools::after {
   right: 0;
-  background: linear-gradient(to left, var(--background-color), rgba(239, 239, 239, 0));
+  bottom: 0;
+  background-image: 
+    linear-gradient(transparent, var(--hero-blur) 55%, var(--hero-blur) 55%, transparent),
+    linear-gradient(to right, transparent, var(--hero-blur) 55%, var(--hero-blur) 55%, transparent),
+    linear-gradient(var(--widget-border-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--widget-border-color) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 20px 20px, 20px 20px;
+  opacity: 0.2;
 }
 
-.tools-container {
-  display: flex;
-  animation: scroll 30s linear infinite;
+#hero-top {
+  font-size: 3rem;
+  font-weight: bold;
+  position: relative;
+  z-index: 1;
 }
 
-.tool {
-  min-width: 100px;
-  height: var(--height-1);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  background: var(--hero-background-color);
+#hero-bottom {
   font-size: 1.5rem;
-  font-weight: 600;
-}
-
-@keyframes scroll {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
+  font-weight: 400;
+  position: relative;
+  z-index: 1;
 }
 
 /* About */
 #about {
+  color: var(--about-text-color);
   display: flex;
   flex-direction: column;
   justify-content: center;
+  gap: 2rem;
   align-items: center;
   text-align: center;
-  padding: 0 1rem;
   height: var(--height-4);
+  background-color: rgb(0, 92, 92);
+  padding: 0 2rem;
+  /*
+  background-image: url("images/lisbon.jpg");
+  background-size: 120%;
+  background-position: top;
+  */
+  
+}
+
+#about h1 {
+  text-decoration-line: underline;
+  text-decoration-style: wavy;
+  text-decoration-color: rgb(235, 152, 0);
+}
+
+#about-info {
+  color: rgb(235, 152, 0);
+  font-weight: 700;
+}
+
+/* Tools */
+#tools {
+  height: var(--height-1);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#tools-container {
+  display: flex;
+  width: max-content;
+  animation: scroll 60s linear infinite;
+  gap: 1rem;
+}
+
+.tool img {
+  display: flex;
+  align-items: center;
+  width: 40px;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 /* Projects */
-#projects {
-  display: grid;
-}
-
 .project {
   display:flex;
   flex-direction: column;
@@ -228,23 +218,11 @@ img {
 }
 
 .project-img {
-  height: 55%;
+  height: 80%;
 }
 
 .project-img img {
   width: 100%;
-}
-
-.project-info {
-  height: 45%;
-  background: var(--project-info-background-color);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  border-top: 2px solid var(--widget-border-color);
-  padding: 0 1rem;
 }
 
 .project-title {
@@ -252,9 +230,60 @@ img {
   font-weight: 600;
 }
 
-.project-info {
-  font-size: 1rem;
-  font-weight: 400;
+.mac-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background-color: var(--mac-header-background-color);
+  position: relative;
+  border-bottom: 2px solid var(--widget-border-color);
+  height: calc(var(--height-1) / 2);
+}
+
+.dots {
+  position: absolute;
+  left: 12px;
+  display: flex;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 8px;
+  border: 2px solid var(--widget-border-color);
+}
+
+.red {
+  background-color: var(--dot-background-color);
+}
+
+.yellow {
+  background-color: var(--dot-background-color);
+}
+
+.green {
+  background-color: var(--dot-background-color);
+}
+
+.highlighted .dot.red {
+  background-color: #ff5f56;
+}
+
+.highlighted .dot.yellow {
+  background-color: #ffbd2e;
+}
+
+.highlighted .dot.green {
+  background-color: #27c93f;
+}
+
+
+/* Footer */
+footer {
+  display: flex;
+  justify-content: center;
 }
 
 /* Large devices */
@@ -267,16 +296,31 @@ img {
   --height-4: 300px;
   }
 
+  body {
+    font-size: 1.2rem;
+  }
+
   #hero {
     font-size: 5rem;
   }
 
-  #projects {
-    grid-template-columns: 1fr 1fr;
+  .project-img {
+    height: 85%;
   }
 
-  .project {
-    height: var(--height-3);
+  .mac-header {
+    padding: .5rem;
+    padding-left: 2rem;
+    justify-content: center;
+  }
+
+  .dots {
+    left: 16px;
+    display: flex;
+  }
+
+  .dot {
+    background-color: var(--dot-background-color);
   }
 }
 /* XSmall devices */
@@ -300,6 +344,15 @@ img {
 /* Non-touch devices */
 @media (hover: hover) {
   a:hover {
-    transform: scale(.98);
+    transform: scale(1.01);
+  }
+  .project:hover .red {
+    background-color: #ff5f56;
+  }
+  .project:hover .yellow {
+    background-color: #ffbd2e;
+  }
+  .project:hover .green {
+    background-color: #27c93f;
   }
 }
