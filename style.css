@@ -307,6 +307,11 @@ footer {
     height: 85%;
   }
 
+  .project-img img {
+    height: auto;
+    width: 100%;
+  }
+
   .mac-header {
     padding: .5rem;
     padding-left: 2rem;
