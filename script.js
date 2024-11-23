@@ -26,3 +26,10 @@ if (window.matchMedia("(hover: none)").matches) { // Only for touch devices
     });
   });
 }
+
+const scaleFactor = 1;
+document.addEventListener("scroll", () => {
+    const scrollSpeed = 0.5;
+    const offset = window.scrollY * scrollSpeed * scaleFactor;
+    document.body.style.backgroundPosition = `0px ${offset}px`;
+});

@@ -44,7 +44,7 @@ body {
   background-image: 
     linear-gradient(to right, #ccc 1px, transparent 1px),
     linear-gradient(to bottom, #ccc 1px, transparent 1px);
-  background-size: 20px 20px;
+  background-size: 40px 40px;
   font-family: "Raleway", sans-serif;
   font-weight: 500;
 }
@@ -60,10 +60,12 @@ a {
   margin: 1rem;
   overflow: hidden;
   box-shadow: var(--widget-box-shadow);
+  height: var(--height-large);
   min-width: var(--height-large);
 }
 
 .small {
+  height: var(--height-small);
   min-width: var(--height-small);
 }
 /* Socials */
@@ -145,11 +147,6 @@ a {
   height: var(--height-large);
   background-color: rgb(0, 92, 92);
   padding: 0 2rem;
-  /*
-  background-image: url("images/lisbon.jpg");
-  background-size: 120%;
-  background-position: top;
-  */
   
 }
 
@@ -267,6 +264,8 @@ a {
 footer {
   display: flex;
   justify-content: center;
+  align-items: center;
+  background-color: var(--mac-header-background-color);
 }
 
 /* Large devices */
