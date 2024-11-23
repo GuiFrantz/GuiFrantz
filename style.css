@@ -24,10 +24,8 @@
   --guftz-color: #E94F37;
 
   /* Other values*/
-  --height-1: 50px;
-  --height-2: 150px;
-  --height-3: 250px;
-  --height-4: 300px;
+  --height-small: 50px;
+  --height-large: 300px;
 }
 
 /* General Styles */
@@ -62,6 +60,11 @@ a {
   margin: 1rem;
   overflow: hidden;
   box-shadow: var(--widget-box-shadow);
+  min-width: var(--height-large);
+}
+
+.small {
+  min-width: var(--height-small);
 }
 /* Socials */
 #socials {
@@ -78,7 +81,7 @@ a {
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: var(--height-1);
+  height: var(--height-small);
   color: white;
   font-size: 1.5rem;
   font-weight: 600;
@@ -110,7 +113,7 @@ a {
   text-align: center;
   justify-content: center;
   background: var(--hero-background-color);
-  height: var(--height-4);
+  height: var(--height-large);
   position: relative;
   overflow: hidden;
   margin-top: 0;
@@ -139,7 +142,7 @@ a {
   gap: 2rem;
   align-items: center;
   text-align: center;
-  height: var(--height-4);
+  height: var(--height-large);
   background-color: rgb(0, 92, 92);
   padding: 0 2rem;
   /*
@@ -163,7 +166,7 @@ a {
 
 /* Tools */
 #tools {
-  height: var(--height-1);
+  height: var(--height-small);
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -198,7 +201,7 @@ a {
   flex-direction: column;
   justify-content: center;
   padding: 0;
-  height: var(--height-4);
+  height: var(--height-large);
 }
 
 .project.highlighted {
@@ -206,7 +209,17 @@ a {
   transition: transform 0.2s ease-in-out;
 }
 
+.project-img {
+  height: 85%;
+  display: flex;
+  justify-content: center;
+}
+
 .project-img img {
+  display: flex;
+   justify-content: center;  align-items: center;
+  width: 100%;
+  height: auto;
   object-fit: cover;
 }
 
@@ -217,7 +230,7 @@ a {
   padding: 1rem;
   background-color: var(--mac-header-background-color);
   position: relative;
-  height: calc(var(--height-1) / 2);
+  height: calc(var(--height-small) / 2);
 }
 
 .dots {
@@ -260,10 +273,8 @@ footer {
 @media (min-width: 600px) {
   :root {
     /* Other values*/
-  --height-1: 50px;
-  --height-2: 100px;
-  --height-3: 200px;
-  --height-4: 300px;
+  --height-small: 50px;
+  --height-large: 300px;
   }
 
   body {
@@ -272,15 +283,6 @@ footer {
 
   #hero {
     font-size: 5rem;
-  }
-
-  .project-img {
-    height: 85%;
-  }
-
-  .project-img img {
-    height: auto;
-    width: 100%;
   }
 
   .mac-header {
@@ -299,13 +301,11 @@ footer {
   }
 }
 /* XSmall devices */
-@media (max-width: 350px) {
+@media (max-width: 360px) {
   :root {
     /* Other values*/
-  --height-1: 50px;
-  --height-2: 100px;
-  --height-3: 150px;
-  --height-4: 150px;
+  --height-small: 50px;
+  --height-large: 150px;
   }
 
   #hero h1 {
