@@ -17,12 +17,11 @@ if (window.matchMedia("(hover: none)").matches) { // Only for touch devices
     projects.forEach(project => {
       const rect = project.getBoundingClientRect();
       const projectIsCentered = rect.top < window.innerHeight / 2 && rect.bottom > window.innerHeight / 2;
-
-      const dots = project.querySelector('.dots');
+  
       if (projectIsCentered) {
-        dots.classList.add('highlighted');
+        project.classList.add('highlighted');
       } else {
-        dots.classList.remove('highlighted');
+        project.classList.remove('highlighted');
       }
     });
   });
