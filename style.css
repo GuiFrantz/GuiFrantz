@@ -35,9 +35,9 @@
 }
 
 body {
-  margin: .5rem auto;
+  margin: .5rem auto .5rem auto;
   max-width: 600px;
-  height: 100vh;
+  min-height: 100vh;
   padding: 0 .5rem;
   color: var(--text-color);
   background: var(--background-color);
