@@ -1,71 +1,212 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="images/icon.png" type="image/x-icon">
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/f0440add5f.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Gui Frantz</title>
+    <style>
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-2px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .gradient-text {
+            background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .skill-item {
+            position: relative;
+            overflow: visible;
+        }
+
+        .skill-name {
+            opacity: 0;
+            transform: translate(-50%, 10px);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: absolute;
+            bottom: -1rem;
+            left: 50%;
+            white-space: nowrap;
+            text-align: center;
+            pointer-events: none;
+            width: max-content;
+            max-width: 100px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-size: 0.875rem;
+            line-height: 1.25rem;
+            color: #4b5563;
+        }
+
+        .skill-image {
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .skill-item:hover .skill-image {
+            transform: translateY(-8px);
+        }
+
+        .skill-item:hover .skill-name {
+            opacity: 1;
+            transform: translate(-50%, 0);
+        }
+    </style>
 </head>
-<body>
-     <!-- Socials -->
-      <div id="socials">
-        <a class="social widget small" id="social-github" href="https://github.com/GuiFrantz" target="_blank" rel="noopener noreferrer"><ion-icon name="logo-github"></ion-icon></a>
-        <a class="social widget small" id="social-linkedin" href="https://linkedin.com/in/guilhermegfrantz" target="_blank" rel="noopener noreferrer"><ion-icon name="logo-linkedin"></ion-icon></a>
-        <a class="social widget small" id="social-instagram" href="https://www.instagram.com/guigurgelf/" target="_blank" rel="noopener noreferrer"><ion-icon name="logo-instagram"></ion-icon></a>
-      </div>
-
-      <!-- Hero -->
-     <div id="hero" class="widget">
-        <h1 id="hero-top">Gui Frantz</h1>
-        <h1 id="hero-bottom">Full Stack Developer</h1>
-     </div>
-  
-     <!-- Tools -->
-      <div id="tools" class="widget small">
-        <div id="tools-container">
-            <div class="tool"><img src="images/react.png"></div>
-            <div class="tool"><img src="images/html.png"></div>
-            <div class="tool"><img src="images/css.png"></div>
-            <div class="tool"><img src="images/js.png"></div>
-            <div class="tool"><img src="images/python.png"></div>
-            <div class="tool"><img src="images/django.png"></div>
-            <div class="tool"><img src="images/flask.png"></div>
-            <div class="tool"><img src="images/mysql.png"></div>
-            <div class="tool"><img src="images/java.png"></div>
-            <div class="tool"><img src="images/c.png"></div>
-            <div class="tool"><img src="images/kotlin.png"></div>
-
-            <div class="tool"><img src="images/react.png"></div>
-            <div class="tool"><img src="images/html.png"></div>
-            <div class="tool"><img src="images/css.png"></div>
-            <div class="tool"><img src="images/js.png"></div>
-            <div class="tool"><img src="images/python.png"></div>
-            <div class="tool"><img src="images/django.png"></div>
-            <div class="tool"><img src="images/flask.png"></div>
-            <div class="tool"><img src="images/mysql.png"></div>
-            <div class="tool"><img src="images/java.png"></div>
-            <div class="tool"><img src="images/c.png"></div>
-            <div class="tool"><img src="images/kotlin.png"></div>
+<body class="bg-gray-50 min-h-screen">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Socials -->
+        <div class="flex justify-center gap-4 mb-12">
+            <a href="https://github.com/GuiFrantz" target="_blank" 
+               class="w-12 h-12 rounded-full bg-gray-800 shadow-lg flex items-center justify-center 
+                      text-2xl hover:scale-110 transition-transform duration-300 hover:shadow-xl">
+                <ion-icon name="logo-github" class="text-white"></ion-icon>
+            </a>
+            <a href="https://linkedin.com/in/guilhermegfrantz" target="_blank" 
+               class="w-12 h-12 rounded-full bg-blue-600 shadow-lg flex items-center justify-center 
+                      text-2xl hover:scale-110 transition-transform duration-300 hover:shadow-xl">
+                <ion-icon name="logo-linkedin" class="text-white"></ion-icon>
+            </a>
+            <a href="https://www.instagram.com/guigurgelf/" target="_blank" 
+               class="w-12 h-12 rounded-full bg-pink-500 shadow-lg flex items-center justify-center 
+                      text-2xl hover:scale-110 transition-transform duration-300 hover:shadow-xl">
+                <ion-icon name="logo-instagram" class="text-white"></ion-icon>
+            </a>
         </div>
-      </div>
 
-    <!-- About -->
-     <div id="about" class="widget">
-        <h1>Right Now</h1>
-        <p>I'm studying for my Bachelor's degree in <span id="about-info">Computer Engineering</span> in Lisbon and taking on <span id="about-info">freelance</span> projects</p>
-     </div>
+        <!-- Hero -->
+        <div class="text-center mb-16">
+            <h1 class="text-5xl md:text-6xl font-bold mb-4 gradient-text">
+                Gui Frantz
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-600 font-medium mb-6">
+                Full Stack Developer
+            </p>
+        </div>
 
-       <!-- Footer -->
-       <footer class="widget small">
-            Gui Frantz &copy; <span id="year_footer"></span>
-       </footer>
 
-       <script src="script.js"></script>
+        
+        <!-- Skills Grid -->
+        <div class="bg-white rounded-2xl shadow-xl p-8 text-white mb-12">
+            <div class="max-w-2xl mx-auto">
+                <h2 class="text-black text-2xl font-bold mb-6">Tools I use</h2>
+                <div class="grid grid-cols-6 md:grid-cols-8">
+                    <!-- Skill Items with aspect ratio protection -->
+                    <div class="skill-item p-4 rounded-xl hover:bg-gray-50 transition-colors">
+                        <div class="relative">
+                            <img src="images/react.png" class="skill-image w-8 h-8 mx-auto object-contain">
+                            <p class="skill-name">React</p>
+                        </div>
+                    </div>
+                    <div class="skill-item p-4 rounded-xl hover:bg-gray-50 transition-colors">
+                        <div class="relative">
+                            <img src="images/html.png" class="skill-image w-8 h-8 mx-auto object-contain">
+                            <p class="skill-name">HTML</p>
+                        </div>
+                    </div>
+                    <div class="skill-item p-4 rounded-xl hover:bg-gray-50 transition-colors">
+                        <div class="relative">
+                            <img src="images/css.png" class="skill-image w-8 h-8 mx-auto object-contain">
+                            <p class="skill-name">CSS</p>
+                        </div>
+                    </div>
+                    <div class="skill-item p-4 rounded-xl hover:bg-gray-50 transition-colors">
+                        <div class="relative">
+                            <img src="images/js.png" class="skill-image w-8 h-8 mx-auto object-contain">
+                            <p class="skill-name">JavaScript</p>
+                        </div>
+                    </div>
+                    <div class="skill-item p-4 rounded-xl hover:bg-gray-50 transition-colors">
+                        <div class="relative">
+                            <img src="images/python.png" class="skill-image w-8 h-8 mx-auto object-contain">
+                            <p class="skill-name">Python</p>
+                        </div>
+                    </div>
+                    <div class="skill-item p-4 rounded-xl hover:bg-gray-50 transition-colors">
+                        <div class="relative">
+                            <img src="images/django.png" class="skill-image w-8 h-8 mx-auto object-contain">
+                            <p class="skill-name">Django</p>
+                        </div>
+                    </div>
+                    <div class="skill-item p-4 rounded-xl hover:bg-gray-50 transition-colors">
+                        <div class="relative">
+                            <img src="images/flask.png" class="skill-image w-8 h-8 mx-auto object-contain">
+                            <p class="skill-name">Flask</p>
+                        </div>
+                    </div>
+                    <div class="skill-item p-4 rounded-xl hover:bg-gray-50 transition-colors">
+                        <div class="relative">
+                            <img src="images/mysql.png" class="skill-image w-8 h-8 mx-auto object-contain">
+                            <p class="skill-name">MySQL</p>
+                        </div>
+                    </div>
+                    <div class="skill-item p-4 rounded-xl hover:bg-gray-50 transition-colors">
+                        <div class="relative">
+                            <img src="images/java.png" class="skill-image w-8 h-8 mx-auto object-contain">
+                            <p class="skill-name">Java</p>
+                        </div>
+                    </div>
+                    <div class="skill-item p-4 rounded-xl hover:bg-gray-50 transition-colors">
+                        <div class="relative">
+                            <img src="images/c.png" class="skill-image w-8 h-8 mx-auto object-contain">
+                            <p class="skill-name">C</p>
+                        </div>
+                    </div>
+                    <div class="skill-item p-4 rounded-xl hover:bg-gray-50 transition-colors">
+                        <div class="relative">
+                            <img src="images/kotlin.png" class="skill-image w-8 h-8 mx-auto object-contain">
+                            <p class="skill-name">Kotlin</p>
+                        </div>
+                    </div>
+                    <div class="skill-item p-4 rounded-xl hover:bg-gray-50 transition-colors">
+                        <div class="relative">
+                            <img src="images/tailwind.png" class="skill-image w-8 h-8 mx-auto object-contain">
+                            <p class="skill-name">Tailwind</p>
+                        </div>
+                    </div>
+                    <div class="skill-item p-4 rounded-xl hover:bg-gray-50 transition-colors">
+                        <div class="relative">
+                            <img src="images/git.png" class="skill-image w-8 h-8 mx-auto object-contain">
+                            <p class="skill-name">Git</p>
+                        </div>
+                    </div>
+                    <div class="skill-item p-4 rounded-xl hover:bg-gray-50 transition-colors">
+                        <div class="relative">
+                            <img src="images/figma.png" class="skill-image w-8 h-8 mx-auto object-contain">
+                            <p class="skill-name">Figma</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- About -->
+        <div class="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl shadow-xl p-8 text-white mb-12">
+            <div class="max-w-2xl mx-auto">
+                <h2 class="text-2xl font-bold mb-6">Currently</h2>
+                <p class="text-lg leading-relaxed">
+                    Pursuing my Bachelor's degree in <span class="font-semibold bg-white/10 px-2 py-1 rounded">Computer Engineering</span> 
+                    in Lisbon and taking on <span class="font-semibold bg-white/10 px-2 py-1 rounded">freelance projects</span>. 
+                </p>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="text-center text-gray-600">
+            <p>Gui Frantz &copy; <span id="year_footer"></span></p>
+        </footer>
+    </div>
+
+    <script>
+        // Footer year update
+        document.getElementById('year_footer').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
