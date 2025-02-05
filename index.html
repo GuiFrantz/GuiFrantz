@@ -58,6 +58,22 @@
             opacity: 1;
             transform: translate(-50%, 0);
         }
+
+        /* Scrollbar styling */
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Auto-scroll animation */
+        @keyframes tools-scroll {
+            0% { transform: translateX(0); }
+            50% { transform: translateX(var(--translateX)); }
+            100% { transform: translateX(0); }
+        }
     </style>
 </head>
 <body class="bg-gray-50 min-h-screen">
@@ -91,96 +107,96 @@
             </p>
         </div>
 
-
-        
-        <!-- Skills Grid -->
+        <!-- Tools Carousel -->
         <div class="bg-white rounded-2xl shadow-xl p-8 text-white mb-12">
             <div class="max-w-2xl mx-auto">
                 <h2 class="text-black text-2xl font-bold mb-6">Tools I use</h2>
-                <div class="grid grid-cols-4 md:grid-cols-8">
-                    <!-- Skill Items with aspect ratio protection -->
-                    <div class="skill-item p-4 rounded-xl hover:bg-gray-50 transition-colors">
-                        <div class="relative">
-                            <img src="images/react.png" class="skill-image w-12 h-12 mx-auto object-contain">
-                            <p class="skill-name">React</p>
+                <div class="overflow-x-hidden pb-4"> <!-- Parent container -->
+                    <div class="flex space-x-4 scrollbar-hide" id="tools-carousel">
+                        <!-- Skill Items -->
+                        <div class="skill-item flex-shrink-0 p-4 rounded-xl hover:bg-gray-50 transition-colors">
+                            <div class="relative">
+                                <img src="images/react.png" class="skill-image w-12 h-12 mx-auto object-contain">
+                                <p class="skill-name">React</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="skill-item p-4 rounded-xl hover:bg-gray-50 transition-colors">
-                        <div class="relative">
-                            <img src="images/html.png" class="skill-image w-12 h-12 mx-auto object-contain">
-                            <p class="skill-name">HTML</p>
+                        <div class="skill-item flex-shrink-0 p-4 rounded-xl hover:bg-gray-50 transition-colors">
+                            <div class="relative">
+                                <img src="images/html.png" class="skill-image w-12 h-12 mx-auto object-contain">
+                                <p class="skill-name">HTML</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="skill-item p-4 rounded-xl hover:bg-gray-50 transition-colors">
-                        <div class="relative">
-                            <img src="images/css.png" class="skill-image w-12 h-12 mx-auto object-contain">
-                            <p class="skill-name">CSS</p>
+                        <div class="skill-item flex-shrink-0 p-4 rounded-xl hover:bg-gray-50 transition-colors">
+                            <div class="relative">
+                                <img src="images/css.png" class="skill-image w-12 h-12 mx-auto object-contain">
+                                <p class="skill-name">CSS</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="skill-item p-4 rounded-xl hover:bg-gray-50 transition-colors">
-                        <div class="relative">
-                            <img src="images/js.png" class="skill-image w-12 h-12 mx-auto object-contain">
-                            <p class="skill-name">JavaScript</p>
+                        <div class="skill-item flex-shrink-0 p-4 rounded-xl hover:bg-gray-50 transition-colors">
+                            <div class="relative">
+                                <img src="images/js.png" class="skill-image w-12 h-12 mx-auto object-contain">
+                                <p class="skill-name">JavaScript</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="skill-item p-4 rounded-xl hover:bg-gray-50 transition-colors">
-                        <div class="relative">
-                            <img src="images/python.png" class="skill-image w-12 h-12 mx-auto object-contain">
-                            <p class="skill-name">Python</p>
+                        <div class="skill-item flex-shrink-0 p-4 rounded-xl hover:bg-gray-50 transition-colors">
+                            <div class="relative">
+                                <img src="images/python.png" class="skill-image w-12 h-12 mx-auto object-contain">
+                                <p class="skill-name">Python</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="skill-item p-4 rounded-xl hover:bg-gray-50 transition-colors">
-                        <div class="relative">
-                            <img src="images/django.png" class="skill-image w-12 h-12 mx-auto object-contain">
-                            <p class="skill-name">Django</p>
+                        <div class="skill-item flex-shrink-0 p-4 rounded-xl hover:bg-gray-50 transition-colors">
+                            <div class="relative">
+                                <img src="images/django.png" class="skill-image w-12 h-12 mx-auto object-contain">
+                                <p class="skill-name">Django</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="skill-item p-4 rounded-xl hover:bg-gray-50 transition-colors">
-                        <div class="relative">
-                            <img src="images/flask.png" class="skill-image w-12 h-12 mx-auto object-contain">
-                            <p class="skill-name">Flask</p>
+                        <div class="skill-item flex-shrink-0 p-4 rounded-xl hover:bg-gray-50 transition-colors">
+                            <div class="relative">
+                                <img src="images/flask.png" class="skill-image w-12 h-12 mx-auto object-contain">
+                                <p class="skill-name">Flask</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="skill-item p-4 rounded-xl hover:bg-gray-50 transition-colors">
-                        <div class="relative">
-                            <img src="images/mysql.png" class="skill-image w-12 h-12 mx-auto object-contain">
-                            <p class="skill-name">MySQL</p>
+                        <div class="skill-item flex-shrink-0 p-4 rounded-xl hover:bg-gray-50 transition-colors">
+                            <div class="relative">
+                                <img src="images/mysql.png" class="skill-image w-12 h-12 mx-auto object-contain">
+                                <p class="skill-name">MySQL</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="skill-item p-4 rounded-xl hover:bg-gray-50 transition-colors">
-                        <div class="relative">
-                            <img src="images/java.png" class="skill-image w-12 h-12 mx-auto object-contain">
-                            <p class="skill-name">Java</p>
+                        <div class="skill-item flex-shrink-0 p-4 rounded-xl hover:bg-gray-50 transition-colors">
+                            <div class="relative">
+                                <img src="images/java.png" class="skill-image w-12 h-12 mx-auto object-contain">
+                                <p class="skill-name">Java</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="skill-item p-4 rounded-xl hover:bg-gray-50 transition-colors">
-                        <div class="relative">
-                            <img src="images/c.png" class="skill-image w-12 h-12 mx-auto object-contain">
-                            <p class="skill-name">C</p>
+                        <div class="skill-item flex-shrink-0 p-4 rounded-xl hover:bg-gray-50 transition-colors">
+                            <div class="relative">
+                                <img src="images/c.png" class="skill-image w-12 h-12 mx-auto object-contain">
+                                <p class="skill-name">C</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="skill-item p-4 rounded-xl hover:bg-gray-50 transition-colors">
-                        <div class="relative">
-                            <img src="images/kotlin.png" class="skill-image w-12 h-12 mx-auto object-contain">
-                            <p class="skill-name">Kotlin</p>
+                        <div class="skill-item flex-shrink-0 p-4 rounded-xl hover:bg-gray-50 transition-colors">
+                            <div class="relative">
+                                <img src="images/kotlin.png" class="skill-image w-12 h-12 mx-auto object-contain">
+                                <p class="skill-name">Kotlin</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="skill-item p-4 rounded-xl hover:bg-gray-50 transition-colors">
-                        <div class="relative">
-                            <img src="images/tailwind.png" class="skill-image w-12 h-12 mx-auto object-contain">
-                            <p class="skill-name">Tailwind</p>
+                        <div class="skill-item flex-shrink-0 p-4 rounded-xl hover:bg-gray-50 transition-colors">
+                            <div class="relative">
+                                <img src="images/tailwind.png" class="skill-image w-12 h-12 mx-auto object-contain">
+                                <p class="skill-name">Tailwind</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="skill-item p-4 rounded-xl hover:bg-gray-50 transition-colors">
-                        <div class="relative">
-                            <img src="images/git.png" class="skill-image w-12 h-12 mx-auto object-contain">
-                            <p class="skill-name">Git</p>
+                        <div class="skill-item flex-shrink-0 p-4 rounded-xl hover:bg-gray-50 transition-colors">
+                            <div class="relative">
+                                <img src="images/git.png" class="skill-image w-12 h-12 mx-auto object-contain">
+                                <p class="skill-name">Git</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="skill-item p-4 rounded-xl hover:bg-gray-50 transition-colors">
-                        <div class="relative">
-                            <img src="images/figma.png" class="skill-image w-12 h-12 mx-auto object-contain">
-                            <p class="skill-name">Figma</p>
+                        <div class="skill-item flex-shrink-0 p-4 rounded-xl hover:bg-gray-50 transition-colors">
+                            <div class="relative">
+                                <img src="images/figma.png" class="skill-image w-12 h-12 mx-auto object-contain">
+                                <p class="skill-name">Figma</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -198,6 +214,39 @@
             </div>
         </div>
 
+        <!-- Projects Section -->
+        <div class="bg-white rounded-2xl shadow-xl p-8 mb-12">
+            <div class="max-w-2xl mx-auto">
+                <h2 class="text-2xl font-bold mb-6 gradient-text">Projects</h2>
+                <div class="grid gap-6">
+                    <!-- Project 1 -->
+                    <div class="project-card p-6 rounded-xl bg-gray-50 hover:bg-gray-100 transition-colors">
+                        <h3 class="text-xl font-semibold mb-2">Noter</h3>
+                        <p class="text-gray-600 mb-4">Simple approach on a minimal text editor for when you just need to write down some notes</p>
+                        <div class="flex gap-3">
+                            <a href="https://github.com/GuiFrantz/Noter" target="_blank" class="text-blue-600 hover:text-blue-800 flex items-center">
+                                <ion-icon name="logo-github" class="mr-1"></ion-icon> Code
+                            </a>
+                            <a href="https://guifrantz.github.io/Noter/" target="_blank" class="text-purple-600 hover:text-purple-800 flex items-center">
+                                <ion-icon name="globe-outline" class="mr-1"></ion-icon> Live
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="project-card p-6 rounded-xl bg-gray-50 hover:bg-gray-100 transition-colors">
+                        <h3 class="text-xl font-semibold mb-2">Seven Data</h3>
+                        <p class="text-gray-600 mb-4">Client-side WhatsApp chat analyzer extracting sales insights from specific business data</p>
+                        <div class="flex gap-3">
+                            <a href="https://github.com/GuiFrantz/SevenData" target="_blank" class="text-blue-600 hover:text-blue-800 flex items-center">
+                                <ion-icon name="logo-github" class="mr-1"></ion-icon> Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- Footer -->
         <footer class="text-center text-gray-600">
             <p>Gui Frantz &copy; <span id="year_footer"></span></p>
@@ -207,6 +256,21 @@
     <script>
         // Footer year update
         document.getElementById('year_footer').textContent = new Date().getFullYear();
+
+        // Auto-scroll for tools carousel
+        const carousel = document.getElementById('tools-carousel');
+        if (carousel) {
+            const container = carousel.parentElement;
+            const contentWidth = carousel.scrollWidth;
+            const containerWidth = container.clientWidth;
+            const translateX = contentWidth - containerWidth;
+
+            if (translateX > 0) {
+                carousel.style.setProperty('--translateX', `-${translateX}px`);
+                carousel.style.animation = 'tools-scroll 40s linear infinite';
+                carousel.style.willChange = 'transform'; // Optimize animation performance
+            }
+        }
     </script>
 </body>
 </html>
