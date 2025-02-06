@@ -9,10 +9,9 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Gui Frantz</title>
     <style>
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-2px); }
-            100% { transform: translateY(0px); }
+        @keyframes tools-scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(var(--translateX)); }
         }
 
         .gradient-text {
@@ -67,13 +66,6 @@
         .scrollbar-hide::-webkit-scrollbar {
             display: none;
         }
-
-        /* Auto-scroll animation */
-        @keyframes tools-scroll {
-            0% { transform: translateX(0); }
-            50% { transform: translateX(var(--translateX)); }
-            100% { transform: translateX(0); }
-        }
     </style>
 </head>
 <body class="bg-gray-50 min-h-screen">
@@ -113,91 +105,7 @@
                 <h2 class="text-black text-xl md:text-2xl font-bold mb-4 md:mb-6">Tools I use</h2>
                 <div class="overflow-x-hidden pb-2 md:pb-4">
                     <div class="flex space-x-2 md:space-x-4 scrollbar-hide" id="tools-carousel">
-                        <!-- Skill Items -->
-                        <div class="skill-item flex-shrink-0 p-2 md:p-4 rounded-lg md:rounded-xl hover:bg-gray-50 transition-colors">
-                            <div class="relative">
-                                <img src="images/react.png" class="skill-image w-12 h-12 mx-auto object-contain">
-                                <p class="skill-name">React</p>
-                            </div>
-                        </div>
-                        <div class="skill-item flex-shrink-0 p-2 md:p-4 rounded-lg md:rounded-xl hover:bg-gray-50 transition-colors">
-                            <div class="relative">
-                                <img src="images/html.png" class="skill-image w-12 h-12 mx-auto object-contain">
-                                <p class="skill-name">HTML</p>
-                            </div>
-                        </div>
-                        <div class="skill-item flex-shrink-0 p-2 md:p-4 rounded-lg md:rounded-xl hover:bg-gray-50 transition-colors">
-                            <div class="relative">
-                                <img src="images/css.png" class="skill-image w-12 h-12 mx-auto object-contain">
-                                <p class="skill-name">CSS</p>
-                            </div>
-                        </div>
-                        <div class="skill-item flex-shrink-0 p-2 md:p-4 rounded-lg md:rounded-xl hover:bg-gray-50 transition-colors">
-                            <div class="relative">
-                                <img src="images/js.png" class="skill-image w-12 h-12 mx-auto object-contain">
-                                <p class="skill-name">JavaScript</p>
-                            </div>
-                        </div>
-                        <div class="skill-item flex-shrink-0 p-2 md:p-4 rounded-lg md:rounded-xl hover:bg-gray-50 transition-colors">
-                            <div class="relative">
-                                <img src="images/python.png" class="skill-image w-12 h-12 mx-auto object-contain">
-                                <p class="skill-name">Python</p>
-                            </div>
-                        </div>
-                        <div class="skill-item flex-shrink-0 p-2 md:p-4 rounded-lg md:rounded-xl hover:bg-gray-50 transition-colors">
-                            <div class="relative">
-                                <img src="images/django.png" class="skill-image w-12 h-12 mx-auto object-contain">
-                                <p class="skill-name">Django</p>
-                            </div>
-                        </div>
-                        <div class="skill-item flex-shrink-0 p-2 md:p-4 rounded-lg md:rounded-xl hover:bg-gray-50 transition-colors">
-                            <div class="relative">
-                                <img src="images/flask.png" class="skill-image w-12 h-12 mx-auto object-contain">
-                                <p class="skill-name">Flask</p>
-                            </div>
-                        </div>
-                        <div class="skill-item flex-shrink-0 p-2 md:p-4 rounded-lg md:rounded-xl hover:bg-gray-50 transition-colors">
-                            <div class="relative">
-                                <img src="images/mysql.png" class="skill-image w-12 h-12 mx-auto object-contain">
-                                <p class="skill-name">MySQL</p>
-                            </div>
-                        </div>
-                        <div class="skill-item flex-shrink-0 p-2 md:p-4 rounded-lg md:rounded-xl hover:bg-gray-50 transition-colors">
-                            <div class="relative">
-                                <img src="images/java.png" class="skill-image w-12 h-12 mx-auto object-contain">
-                                <p class="skill-name">Java</p>
-                            </div>
-                        </div>
-                        <div class="skill-item flex-shrink-0 p-2 md:p-4 rounded-lg md:rounded-xl hover:bg-gray-50 transition-colors">
-                            <div class="relative">
-                                <img src="images/c.png" class="skill-image w-12 h-12 mx-auto object-contain">
-                                <p class="skill-name">C</p>
-                            </div>
-                        </div>
-                        <div class="skill-item flex-shrink-0 p-2 md:p-4 rounded-lg md:rounded-xl hover:bg-gray-50 transition-colors">
-                            <div class="relative">
-                                <img src="images/kotlin.png" class="skill-image w-12 h-12 mx-auto object-contain">
-                                <p class="skill-name">Kotlin</p>
-                            </div>
-                        </div>
-                        <div class="skill-item flex-shrink-0 p-2 md:p-4 rounded-lg md:rounded-xl hover:bg-gray-50 transition-colors">
-                            <div class="relative">
-                                <img src="images/tailwind.png" class="skill-image w-12 h-12 mx-auto object-contain">
-                                <p class="skill-name">Tailwind</p>
-                            </div>
-                        </div>
-                        <div class="skill-item flex-shrink-0 p-2 md:p-4 rounded-lg md:rounded-xl hover:bg-gray-50 transition-colors">
-                            <div class="relative">
-                                <img src="images/git.png" class="skill-image w-12 h-12 mx-auto object-contain">
-                                <p class="skill-name">Git</p>
-                            </div>
-                        </div>
-                        <div class="skill-item flex-shrink-0 p-2 md:p-4 rounded-lg md:rounded-xl hover:bg-gray-50 transition-colors">
-                            <div class="relative">
-                                <img src="images/figma.png" class="skill-image w-12 h-12 mx-auto object-contain">
-                                <p class="skill-name">Figma</p>
-                            </div>
-                        </div>
+                        <!-- Tool items added dynamically -->
                     </div>
                 </div>
             </div>
@@ -256,21 +164,55 @@
     <script>
         // Footer year update
         document.getElementById('year_footer').textContent = new Date().getFullYear();
-
-        // Auto-scroll for tools carousel
-        const carousel = document.getElementById('tools-carousel');
-        if (carousel) {
-            const container = carousel.parentElement;
-            const contentWidth = carousel.scrollWidth;
-            const containerWidth = container.clientWidth;
-            const translateX = contentWidth - containerWidth;
-
-            if (translateX > 0) {
-                carousel.style.setProperty('--translateX', `-${translateX}px`);
-                carousel.style.animation = 'tools-scroll 40s linear infinite';
-                carousel.style.willChange = 'transform';
-            }
+    
+        function addTool(toolName, toolImage) {
+            const toolItem = document.createElement('div');
+            toolItem.className = 'skill-item flex-shrink-0 p-2 md:p-4 rounded-lg md:rounded-xl hover:bg-gray-50 transition-colors';
+            toolItem.innerHTML = `
+                <div class="relative">
+                    <img src="${toolImage}" class="skill-image w-12 h-12 mx-auto object-contain">
+                    <p class="skill-name">${toolName}</p>
+                </div>`;
+            carousel.appendChild(toolItem);
         }
+    
+        const carousel = document.getElementById('tools-carousel');
+        const tools = [
+            ['React', 'images/react.png'],
+            ['HTML', 'images/html.png'],
+            ['CSS', 'images/css.png'],
+            ['JavaScript', 'images/js.png'],
+            ['Python', 'images/python.png'],
+            ['Django', 'images/django.png'],
+            ['Flask', 'images/flask.png'],
+            ['MySQL', 'images/mysql.png'],
+            ['Java', 'images/java.png'],
+            ['C', 'images/c.png'],
+            ['Kotlin', 'images/kotlin.png'],
+            ['Tailwind', 'images/tailwind.png'],
+            ['Git', 'images/git.png'],
+            ['Figma', 'images/figma.png']
+        ];
+    
+        // Add tools twice
+        tools.forEach(tool => addTool(tool[0], tool[1]));
+        tools.forEach(tool => addTool(tool[0], tool[1]));
+    
+        // Wait for images to load
+        const images = carousel.querySelectorAll('img');
+        Promise.all(Array.from(images).map(img => {
+            if (img.complete) return Promise.resolve();
+            return new Promise(resolve => {
+                img.addEventListener('load', resolve);
+                img.addEventListener('error', resolve);
+            });
+        })).then(() => {
+            if (carousel) {
+                const contentWidth = carousel.scrollWidth;
+                carousel.style.setProperty('--translateX', `-${contentWidth / 2}px`);
+                carousel.style.animation = 'tools-scroll 30s linear infinite';
+            }
+        });
     </script>
 </body>
 </html>
