@@ -31,7 +31,7 @@
             transform: translate(-50%, 10px);
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             position: absolute;
-            bottom: -1rem;
+            bottom: -.75rem;
             left: 50%;
             white-space: nowrap;
             text-align: center;
@@ -73,17 +73,17 @@
         <!-- Socials -->
         <div class="flex justify-center gap-3 sm:gap-4 mb-8 md:mb-12">
             <a href="https://github.com/GuiFrantz" target="_blank" 
-               class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-gray-800 shadow-lg flex items-center justify-center 
+               class="w-12 h-12 rounded-full bg-gray-800 shadow-lg flex items-center justify-center 
                       text-xl md:text-2xl hover:scale-110 transition-transform duration-300 hover:shadow-xl">
                 <ion-icon name="logo-github" class="text-white"></ion-icon>
             </a>
             <a href="https://linkedin.com/in/guilhermegfrantz" target="_blank" 
-               class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-blue-600 shadow-lg flex items-center justify-center 
+               class="w-12 h-12 rounded-full bg-blue-600 shadow-lg flex items-center justify-center 
                       text-xl md:text-2xl hover:scale-110 transition-transform duration-300 hover:shadow-xl">
                 <ion-icon name="logo-linkedin" class="text-white"></ion-icon>
             </a>
             <a href="https://www.instagram.com/guigurgelf/" target="_blank" 
-               class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-pink-500 shadow-lg flex items-center justify-center 
+               class="w-12 h-12 rounded-full bg-pink-500 shadow-lg flex items-center justify-center 
                       text-xl md:text-2xl hover:scale-110 transition-transform duration-300 hover:shadow-xl">
                 <ion-icon name="logo-instagram" class="text-white"></ion-icon>
             </a>
@@ -91,33 +91,36 @@
 
         <!-- Hero -->
         <div class="text-center mb-12 md:mb-16">
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 gradient-text">
+            <h1 class="text-5xl lg:text-6xl font-bold mb-4 gradient-text">
                 Gui Frantz
             </h1>
-            <p class="text-lg md:text-xl lg:text-2xl text-gray-600 font-medium mb-6">
+            <p class="text-xl lg:text-2xl text-gray-600 font-medium mb-6">
                 Full Stack Developer
             </p>
         </div>
 
         <!-- Tools Carousel -->
         <div class="bg-white rounded-xl md:rounded-2xl shadow-lg md:shadow-xl p-4 md:p-6 lg:p-8 text-white mb-8 md:mb-12">
+            <!-- Title centered -->
             <div class="max-w-2xl mx-auto">
-                <h2 class="text-black text-xl md:text-2xl font-bold mb-4 md:mb-6">Tools I use</h2>
-                <div class="overflow-x-hidden pb-2 md:pb-4">
-                    <div class="flex space-x-2 md:space-x-4 scrollbar-hide" id="tools-carousel">
-                        <!-- Tool items added dynamically -->
-                    </div>
+                <h2 class="gradient-text text-xl md:text-2xl font-bold mb-4 md:mb-6">Tools I use</h2>
+            </div>
+            <!-- Carousel edge to edge -->
+            <div class="overflow-hidden pb-2 md:pb-4 -mx-4 md:-mx-6 lg:-mx-8">
+                <div class="flex space-x-2 md:space-x-4 scrollbar-hide" id="tools-carousel">
+                <!-- Tool items added dynamically -->
                 </div>
             </div>
         </div>
+  
 
         <!-- About -->
-        <div class="bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl md:rounded-2xl shadow-lg md:shadow-xl p-6 md:p-8 text-white mb-8 md:mb-12">
+        <div class="bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl md:rounded-2xl shadow-lg md:shadow-xl p-4 md:p-6 lg:p-8 text-white mb-8 md:mb-12">
             <div class="max-w-2xl mx-auto">
                 <h2 class="text-xl md:text-2xl font-bold mb-4 md:mb-6">Currently</h2>
                 <p class="text-base md:text-lg leading-relaxed">
-                    Pursuing my Bachelor's degree in <span class="font-semibold bg-white/10 px-2 py-1 rounded">Computer Engineering</span> 
-                    in Lisbon and taking on <span class="font-semibold bg-white/10 px-2 py-1 rounded">freelance</span> projects.
+                    Pursuing my Bachelor's degree in <span class="font-semibold bg-white/10 px-1 py-.75 rounded whitespace-nowrap">Computer Engineering</span> 
+                    in Lisbon and taking on <span class="font-semibold bg-white/10 px-1 py.75 rounded">freelance</span> projects.
                 </p>
             </div>
         </div>
