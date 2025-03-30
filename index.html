@@ -16,7 +16,7 @@
         }
 
         .gradient-text {
-            background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+            background: linear-gradient(45deg, #f59e0b, #eab308);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
@@ -43,7 +43,7 @@
             text-overflow: ellipsis;
             font-size: 0.875rem;
             line-height: 1.25rem;
-            color: #4b5563;
+            color: #d1d5db;
         }
 
         .skill-image {
@@ -59,7 +59,6 @@
             transform: translate(-50%, 0);
         }
 
-        /* Scrollbar styling */
         .scrollbar-hide {
             -ms-overflow-style: none;
             scrollbar-width: none;
@@ -67,26 +66,35 @@
         .scrollbar-hide::-webkit-scrollbar {
             display: none;
         }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+            background: #1f2937;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #4b5563;
+            border-radius: 4px;
+        }
     </style>
 </head>
-<body class="bg-gray-50 min-h-screen">
+<body class="bg-gray-800 min-h-screen">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 py-6 md:py-8">
         <!-- Socials -->
         <div class="flex justify-center gap-3 sm:gap-4 mb-8 md:mb-12">
             <a href="https://github.com/GuiFrantz" target="_blank" 
-               class="w-12 h-12 rounded-full bg-gray-800 shadow-lg flex items-center justify-center 
-                      text-xl md:text-2xl hover:scale-110 transition-transform duration-300 hover:shadow-xl">
-                <ion-icon name="logo-github" class="text-white"></ion-icon>
+               class="w-12 h-12 rounded-full bg-gray-700 shadow-lg shadow-gray-900/50 hover:shadow-gray-900/70 flex items-center justify-center 
+                      text-xl md:text-2xl hover:scale-110 transition-transform duration-300">
+                <ion-icon name="logo-github" class="text-amber-400"></ion-icon>
             </a>
             <a href="https://linkedin.com/in/guilhermegfrantz" target="_blank" 
-               class="w-12 h-12 rounded-full bg-blue-600 shadow-lg flex items-center justify-center 
-                      text-xl md:text-2xl hover:scale-110 transition-transform duration-300 hover:shadow-xl">
-                <ion-icon name="logo-linkedin" class="text-white"></ion-icon>
+               class="w-12 h-12 rounded-full bg-gray-700 shadow-lg shadow-gray-900/50 hover:shadow-gray-900/70 flex items-center justify-center 
+                      text-xl md:text-2xl hover:scale-110 transition-transform duration-300">
+                <ion-icon name="logo-linkedin" class="text-amber-400"></ion-icon>
             </a>
             <a href="https://www.instagram.com/guigurgelf/" target="_blank" 
-               class="w-12 h-12 rounded-full bg-pink-500 shadow-lg flex items-center justify-center 
-                      text-xl md:text-2xl hover:scale-110 transition-transform duration-300 hover:shadow-xl">
-                <ion-icon name="logo-instagram" class="text-white"></ion-icon>
+               class="w-12 h-12 rounded-full bg-gray-700 shadow-lg shadow-gray-900/50 hover:shadow-gray-900/70 flex items-center justify-center 
+                      text-xl md:text-2xl hover:scale-110 transition-transform duration-300">
+                <ion-icon name="logo-instagram" class="text-amber-400"></ion-icon>
             </a>
         </div>
 
@@ -95,62 +103,62 @@
             <h1 class="text-5xl lg:text-6xl font-bold mb-4 gradient-text">
                 Gui Frantz
             </h1>
-            <p class="text-xl lg:text-2xl text-gray-600 font-medium mb-6">
+            <p class="text-xl lg:text-2xl text-gray-300 font-medium mb-4">
                 Full Stack Developer
+            </p>
+            <p class="text-md text-gray-500 font-medium mb-6">
+                Lisbon, Portugal
             </p>
         </div>
 
         <!-- Tools Carousel -->
-        <div class="bg-white rounded-xl md:rounded-2xl shadow-lg md:shadow-xl p-4 md:p-6 lg:p-8 text-white mb-8 md:mb-12">
-            <!-- Title centered -->
+        <div class="bg-gray-700 rounded-xl md:rounded-2xl shadow-lg md:shadow-xl p-4 md:p-6 lg:p-8 text-white mb-4 md:mb-6">
             <div class="max-w-2xl mx-auto">
                 <h2 class="gradient-text text-xl md:text-2xl font-bold mb-4 md:mb-6">Tools I use</h2>
             </div>
-            <!-- Carousel edge to edge -->
             <div class="overflow-hidden pb-2 md:pb-4 -mx-4 md:-mx-6 lg:-mx-8">
                 <div class="flex space-x-2 md:space-x-4 scrollbar-hide" id="tools-carousel">
                 <!-- Tool items added dynamically -->
                 </div>
             </div>
         </div>
-  
 
         <!-- About -->
-        <div class="bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl md:rounded-2xl shadow-lg md:shadow-xl p-4 md:p-6 lg:p-8 text-white mb-8 md:mb-12">
+        <div class="bg-gradient-to-r from-amber-600 to-yellow-600 rounded-xl md:rounded-2xl shadow-lg md:shadow-xl p-4 md:p-6 lg:p-8 text-white mb-4 md:mb-6">
             <div class="max-w-2xl mx-auto">
                 <h2 class="text-xl md:text-2xl font-bold mb-4 md:mb-6">Currently</h2>
                 <p class="text-base md:text-lg leading-relaxed">
-                    Pursuing my Bachelor's degree in <span class="font-semibold bg-white/10 px-1 py-.75 rounded whitespace-nowrap">Computer Engineering</span> 
-                    in Lisbon and taking on <span class="font-semibold bg-white/10 px-1 py.75 rounded">freelance</span> projects.
+                    Pursuing my Bachelor's degree in <span class="font-semibold bg-white/10 px-1 py-0.5 rounded whitespace-nowrap">Computer Engineering</span> 
+                    in Lisbon and taking on <span class="font-semibold bg-white/10 px-1 py-0.5 rounded">freelance</span> projects.
                 </p>
             </div>
         </div>
 
         <!-- Projects Section -->
-        <div class="bg-white rounded-xl md:rounded-2xl shadow-lg md:shadow-xl p-4 md:p-6 lg:p-8 mb-8 md:mb-12">
+        <div class="bg-gray-700 rounded-xl md:rounded-2xl shadow-lg md:shadow-xl p-4 md:p-6 lg:p-8 mb-4 md:mb-6">
             <div class="max-w-2xl mx-auto">
                 <h2 class="text-xl md:text-2xl font-bold mb-4 md:mb-6 gradient-text">Projects</h2>
                 <div class="grid gap-4 md:gap-6">
                     <!-- Project 1 -->
-                    <div class="project-card p-4 md:p-6 rounded-xl bg-gray-50 hover:bg-gray-100 transition-colors">
-                        <h3 class="text-lg md:text-xl font-semibold mb-2">Noter</h3>
-                        <p class="text-gray-600 mb-3 md:mb-4 text-sm md:text-base">Simple approach on a minimal text editor for when you just need to write down some notes</p>
+                    <div class="project-card p-4 md:p-6 rounded-xl bg-gray-600 hover:bg-gray-500 transition-colors">
+                        <h3 class="text-lg md:text-xl font-semibold mb-2 text-gray-100">Noter</h3>
+                        <p class="text-gray-300 mb-3 md:mb-4 text-sm md:text-base">Simple approach on a minimal text editor for when you just need to write down some notes</p>
                         <div class="flex gap-2 md:gap-3">
-                            <a href="https://github.com/GuiFrantz/Noter" target="_blank" class="text-blue-600 hover:text-blue-800 flex items-center text-sm md:text-base">
+                            <a href="https://github.com/GuiFrantz/Noter" target="_blank" class="text-amber-400 hover:text-amber-300 flex items-center text-sm md:text-base">
                                 <ion-icon name="logo-github" class="mr-1"></ion-icon> Code
                             </a>
-                            <a href="https://guifrantz.github.io/Noter/" target="_blank" class="text-purple-600 hover:text-purple-800 flex items-center text-sm md:text-base">
+                            <a href="https://guifrantz.github.io/Noter/" target="_blank" class="text-yellow-400 hover:text-yellow-300 flex items-center text-sm md:text-base">
                                 <ion-icon name="globe-outline" class="mr-1"></ion-icon> Live
                             </a>
                         </div>
                     </div>
 
                     <!-- Project 2 -->
-                    <div class="project-card p-4 md:p-6 rounded-xl bg-gray-50 hover:bg-gray-100 transition-colors">
-                        <h3 class="text-lg md:text-xl font-semibold mb-2">Seven Data</h3>
-                        <p class="text-gray-600 mb-3 md:mb-4 text-sm md:text-base">Client-side WhatsApp chat analyzer extracting sales insights from specific business data</p>
+                    <div class="project-card p-4 md:p-6 rounded-xl bg-gray-600 hover:bg-gray-500 transition-colors">
+                        <h3 class="text-lg md:text-xl font-semibold mb-2 text-gray-100">Seven Data</h3>
+                        <p class="text-gray-300 mb-3 md:mb-4 text-sm md:text-base">Client-side WhatsApp chat analyzer extracting sales insights from specific business data</p>
                         <div class="flex gap-2 md:gap-3">
-                            <a href="https://github.com/GuiFrantz/SevenData" target="_blank" class="text-blue-600 hover:text-blue-800 flex items-center text-sm md:text-base">
+                            <a href="https://github.com/GuiFrantz/SevenData" target="_blank" class="text-amber-400 hover:text-amber-300 flex items-center text-sm md:text-base">
                                 <ion-icon name="logo-github" class="mr-1"></ion-icon> Code
                             </a>
                         </div>
@@ -160,18 +168,17 @@
         </div>
 
         <!-- Footer -->
-        <footer class="text-center text-gray-600 text-sm md:text-base">
+        <footer class="text-center text-gray-400 text-sm md:text-base">
             <p>Gui Frantz &copy; <span id="year_footer"></span></p>
         </footer>
     </div>
 
     <script>
-        // Footer year update
         document.getElementById('year_footer').textContent = new Date().getFullYear();
     
         function addTool(toolName, toolImage) {
             const toolItem = document.createElement('div');
-            toolItem.className = 'skill-item flex-shrink-0 p-2 md:p-4 rounded-lg md:rounded-xl hover:bg-gray-50 transition-colors';
+            toolItem.className = 'skill-item flex-shrink-0 p-2 md:p-4 rounded-lg md:rounded-xl transition-colors';
             toolItem.innerHTML = `
                 <div class="relative">
                     <img src="${toolImage}" class="skill-image w-12 h-12 mx-auto object-contain">
@@ -179,7 +186,7 @@
                 </div>`;
             carousel.appendChild(toolItem);
         }
-    
+
         const carousel = document.getElementById('tools-carousel');
         const tools = [
             ['React', 'images/react.png'],
@@ -207,11 +214,9 @@
         }
         shuffleArray(tools);
     
-        // Add tools twice
         tools.forEach(tool => addTool(tool[0], tool[1]));
         tools.forEach(tool => addTool(tool[0], tool[1]));
     
-        // Wait for images to load
         const images = carousel.querySelectorAll('img');
         Promise.all(Array.from(images).map(img => {
             if (img.complete) return Promise.resolve();
@@ -227,6 +232,5 @@
             }
         });
     </script>
-    
 </body>
 </html>
