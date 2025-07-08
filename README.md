@@ -1,7 +1,7 @@
 # Hi, I'm Gui Frantz 😁
 
 - Junior Full Stack Engineer
-- Computer Engineering Student
+- Computer Engineering Graduate
 - Based in Lisbon
 
 ### 📫 Connect With Me
