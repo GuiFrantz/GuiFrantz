@@ -46,7 +46,7 @@
         setHtml("experience", experience.map(roleEntry).join(""));
         setHtml("projects", projects.map(projectEntry).join(""));
 
-        setText("footer", `© ${new Date().getFullYear()} ${name} · ${footerNote}`);
+        setHtml("footer", `<span>© ${new Date().getFullYear()} ${name}</span><span class="footer-sep" aria-hidden="true">·</span><span class="footer-note">${footerNote}</span>`);
     }
 
     // Reveals [data-reveal] elements as they scroll into view, staggering

@@ -160,20 +160,22 @@ h1 {
     font-family: var(--font-display);
     font-weight: 700;
     font-size: clamp(1.7rem, 4.5vw, 2.4rem);
-    line-height: 1.2;
+    line-height: 1.25;
     letter-spacing: -0.01em;
 }
 
-.location {
-    margin-top: 0.6rem;
+.hero-meta {
+    margin-top: 0.9rem;
     font-size: 0.95rem;
-    font-weight: 500;
+    color: var(--text-muted);
+}
+
+.hero-sep {
+    margin: 0 0.35rem;
     color: var(--accent);
 }
 
-.degree {
-    margin-top: 0.2rem;
-    font-size: 0.95rem;
+.hero-loc {
     color: var(--text-faint);
 }
 
@@ -271,6 +273,11 @@ h1 {
     font-size: 0.9rem;
 }
 
+.footer-sep {
+    margin: 0 0.35rem;
+    color: var(--accent);
+}
+
 /* Scroll reveal — only hidden once JS is running, so no-JS still shows everything */
 
 .js [data-reveal] {
@@ -284,21 +291,67 @@ h1 {
     transform: none;
 }
 
-@media (max-width: 480px) {
-    .entries {
-        gap: 2.5rem;
+@media (max-width: 600px) {
+    .hero {
+        padding-top: 3rem;
+    }
+
+    /* Meta line splits into two quiet lines instead of wrapping mid-phrase */
+    .hero-meta span {
+        display: block;
+    }
+
+    .hero-meta .hero-sep {
+        display: none;
+    }
+
+    /* Footer splits the same way: name line, then note line */
+    .footer p span {
+        display: block;
+    }
+
+    .footer p .footer-sep {
+        display: none;
     }
 
     .socials {
         gap: 1.25rem;
     }
 
+    .entries {
+        gap: 2.5rem;
+    }
+
+    /* Stack entries: title, company/link, dates, description */
+    .entry {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .entry-head {
+        display: contents;
+    }
+
     .entry-title {
+        order: 1;
         font-size: 1.25rem;
     }
 
-    .hero {
-        padding-top: 3rem;
+    .entry-company,
+    .entry-link {
+        order: 2;
+    }
+
+    .entry-meta {
+        order: 3;
+        margin-top: -0.1rem;
+        font-size: 0.85rem;
+    }
+
+    .entry-desc {
+        order: 4;
+        margin-top: 0.6rem;
     }
 }
 
