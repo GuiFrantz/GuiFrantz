@@ -4,39 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gui Frantz</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <script src="config.js" defer></script>
     <script src="render.js" defer></script>
 </head>
-<body>
-    <div class="page">
-        <header class="section">
-            <div class="row name-row">
-                <h1 id="name"></h1>
-                <div class="row links" id="socials"></div>
-            </div>
-            <h2 id="title"></h2>
-            <p class="muted" id="location"></p>
-        </header>
-
-        <section class="section">
-            <h3>Experience</h3>
-            <div id="experience"></div>
-        </section>
-
-        <section class="section">
-            <h3>Projects</h3>
-            <div id="projects"></div>
-        </section>
-
-        <section class="section">
-            <h3>Education</h3>
-            <div id="education"></div>
-        </section>
-
-        <footer class="footer">
-            <p><span id="footerName"></span> &copy; <span id="footerYear"></span></p>
-        </footer>
+<body class="is-loading">
+    <div class="loader" aria-hidden="true">
+        <span class="loader-name"><span id="loaderName"></span></span>
     </div>
+
+    <header class="site-header">
+        <div class="container header-inner">
+            <p class="site-name" id="siteName"></p>
+            <nav class="socials" id="socials"></nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1 id="title" data-reveal></h1>
+                <p class="location" id="location" data-reveal></p>
+                <p class="degree" id="education" data-reveal></p>
+            </div>
+        </section>
+
+        <section class="panel">
+            <div class="container">
+                <h2 class="section-title" data-reveal>Experience</h2>
+                <div class="entries" id="experience"></div>
+            </div>
+        </section>
+
+        <section class="panel">
+            <div class="container">
+                <h2 class="section-title" data-reveal>Projects</h2>
+                <div class="entries" id="projects"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p id="footer"></p>
+    </footer>
 </body>
 </html>
