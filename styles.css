@@ -173,6 +173,22 @@ h1 {
     letter-spacing: -0.01em;
 }
 
+.title-word {
+    display: inline-block;
+    white-space: nowrap;
+    transition: width 0.18s var(--ease-out);
+}
+
+.title-text {
+    display: inline-block;
+    transition: opacity 0.15s var(--ease-out), transform 0.15s var(--ease-out);
+}
+
+.title-text.is-swapping {
+    opacity: 0;
+    transform: translateY(8px);
+}
+
 .hero-meta {
     margin-top: 0.9rem;
     font-size: 0.95rem;
@@ -404,6 +420,11 @@ h1 {
     .js [data-reveal] {
         opacity: 1;
         transform: none;
+        transition: none;
+    }
+
+    .title-word,
+    .title-text {
         transition: none;
     }
 }

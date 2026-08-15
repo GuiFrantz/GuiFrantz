@@ -1,6 +1,7 @@
 const CONFIG = {
     name: "Guilherme Frantz",
-    title: "Software Engineer",
+    titles: ["Software", "Android"],
+    titleSuffix: "Engineer",
     location: "based in Lisbon",
     education: "BSc in Computer Engineering",
     footerNote: "made in Rio, based in Lisbon",

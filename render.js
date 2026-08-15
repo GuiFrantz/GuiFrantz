@@ -34,11 +34,11 @@
     }
 
     function render() {
-        const { name, title, location, education, footerNote, socials, experience, projects } = CONFIG;
+        const { name, titles, titleSuffix, location, education, footerNote, socials, experience, projects } = CONFIG;
 
         setText("loaderName", name);
         setText("siteName", name);
-        setText("title", title);
+        setHtml("title", `<span class="title-word"><span class="title-text">${titles[0]}</span></span> ${titleSuffix}`);
         setText("location", location);
         setText("education", education);
         setHtml("socials", socials.map(socialLink).join(""));
@@ -47,6 +47,33 @@
         setHtml("projects", projects.map(projectEntry).join(""));
 
         setHtml("footer", `<span>© ${new Date().getFullYear()} ${name}</span><span class="footer-sep" aria-hidden="true">·</span><span class="footer-note">${footerNote}</span>`);
+    }
+
+    // Cycles the first title word through CONFIG.titles so every visitor sees
+    // them all. Only the word fades; the suffix slides over as the word's
+    // width animates between the old and new size.
+    function rotateTitles(reduced) {
+        const titles = CONFIG.titles;
+        const word = document.querySelector(".title-word");
+        const el = document.querySelector(".title-text");
+        if (!el || titles.length < 2) return;
+        let i = 0;
+
+        setInterval(() => {
+            i = (i + 1) % titles.length;
+            if (reduced) {
+                el.textContent = titles[i];
+                return;
+            }
+            // Pin the current width so the change to the new width animates.
+            word.style.width = `${el.offsetWidth}px`;
+            el.classList.add("is-swapping");
+            setTimeout(() => {
+                el.textContent = titles[i];
+                word.style.width = `${el.offsetWidth}px`;
+                setTimeout(() => el.classList.remove("is-swapping"), 180);
+            }, 150);
+        }, 3000);
     }
 
     // Reveals [data-reveal] elements as they scroll into view, staggering
@@ -115,6 +142,7 @@
     document.addEventListener("DOMContentLoaded", () => {
         const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
         render();
+        rotateTitles(reduced);
         stickyHeader();
         intro(reduced, initMotion(reduced));
     });
