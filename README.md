@@ -1,7 +1,8 @@
 # Hi, I'm Guilherme Frantz 😁
 
-- Android Software Engineer
+- Android / Software Engineer
+- BSc in Computer Engineering
 - Based in Lisbon
 
-### (Maybe) up to date info:
+### More info:
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/guilhermegfrantz)
