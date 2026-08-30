@@ -20,6 +20,12 @@
     box-sizing: border-box;
 }
 
+/* Reserve the scrollbar's space even while .is-loading hides it, so the
+   centered loader name doesn't shift when the scrollbar pops back in */
+html {
+    scrollbar-gutter: stable;
+}
+
 body {
     margin: 0;
     min-height: 100dvh;
